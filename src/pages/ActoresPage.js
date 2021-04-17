@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import {Container } from "react-bootstrap";
 import './ActoresPage.css';
+
+import ActorCard from '../components/ActorCard';
 import ActorModel from '../model/ActorModel';
 
 function ActoresPage() {
@@ -24,6 +26,14 @@ function ActoresPage() {
 
 
 
+    const actorCards = actors.map((actor, index) => <ActorCard key={'act'+index }
+                                                        firstName = {actor.firstName} 
+                                                        lastName = {actor.lastName}
+                                                        age = {actor.age()}   
+                                                        image = {actor.image} 
+                                                        imdb = {actor.IMDBLink}/>)
+
+    //////////////
 
     return (
         <Container className="p-movie">
@@ -32,7 +42,7 @@ function ActoresPage() {
                     <span className="header-text">Actors</span>               
                 </header>
                 <div className="row">
-                    
+                    {actorCards}
                 </div>
             </div>
         </Container>
