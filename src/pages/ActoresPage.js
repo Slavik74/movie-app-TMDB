@@ -4,6 +4,7 @@ import './ActoresPage.css';
 
 import ActorCard from '../components/ActorCard';
 import ActorModel from '../model/ActorModel';
+import MenuBar from '../components/MenuBar';
 
 function ActoresPage() {
 
@@ -23,6 +24,18 @@ function ActoresPage() {
   ]
     const [actors, setActors] = useState(actorsData);
 
+    //Filter  
+    const [filterText, setFilterText] = useState("");
+
+    const handleFilter = event => {
+        const filterText=event.target.value; 
+        const doFilter = filterText => actor =>
+        !filterText || actor.firstName.toLowerCase().includes(filterText.toLowerCase()) ||
+        actor.lastName.toLowerCase().includes(filterText.toLowerCase()) ;
+
+        setFilterText(filterText); 
+        setActors(actorsData.filter(doFilter(filterText)));
+    }   
 
 
 
@@ -41,6 +54,7 @@ function ActoresPage() {
                 <header>
                     <span className="header-text">Actors</span>               
                 </header>
+                <MenuBar filterText={filterText} handleFilter={handleFilter} />
                 <div className="row">
                     {actorCards}
                 </div>
