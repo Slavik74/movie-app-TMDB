@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, Nav, InputGroup, FormControl } from "react-bootstrap";
+import { Navbar, Nav, InputGroup, FormControl, FormGroup } from "react-bootstrap";
 import './MenuBar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -10,6 +10,7 @@ export default function MenuBar({filterText, sortType, handleFilter, handleSortB
             <Navbar collapseOnSelect expand="md" bg="primary">
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
+                    
                     {/* Filter */}
                     <Nav className="search">
                         <InputGroup>
@@ -19,18 +20,19 @@ export default function MenuBar({filterText, sortType, handleFilter, handleSortB
                             <FormControl placeholder="Search actor" aria-label="Filter"value={filterText} onChange={handleFilter}  />
                         </InputGroup>
                     </Nav>
+
                     {/* Sort */}
                     <Nav className="sort">
                         <InputGroup>
                             <InputGroup.Prepend>
                                 <InputGroup.Text>Sort:</InputGroup.Text>
                             </InputGroup.Prepend>
-                            <select className="form-control" name="Sort" onChange={handleSortBy}>
+                            <FormControl as="select" custom onChange={handleSortBy}>
                                     <option defaultValue="1">Select</option>
                                     <option value="1">First Name</option>
                                     <option value="2">Last Name</option>
                                     <option value="3">Age</option>
-                            </select>
+                            </FormControl>
                             <div className="arrows">
                                 <FontAwesomeIcon style={{ cursor: "pointer" }} icon="long-arrow-alt-down" values={sortType} size="lg" color={sortType==='Asc'? '#d0cfca': '#0275df'}
                                     onClick={handleSortAsc} />
@@ -39,6 +41,7 @@ export default function MenuBar({filterText, sortType, handleFilter, handleSortB
                             </div>
                         </InputGroup>
                     </Nav>
+
                 </Navbar.Collapse>
             </Navbar>
             
