@@ -15,6 +15,9 @@ function ActorCard({firstName, lastName, age, image, imdb}) {
                 </ul>
             </div>
         </div>
+
+
+
     )
 }
 
