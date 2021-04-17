@@ -1,12 +1,7 @@
 import React from 'react';
 import { Navbar, Nav, InputGroup, FormControl } from "react-bootstrap";
 import './MenuBar.css'
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { fab } from '@fortawesome/free-brands-svg-icons'
-import { faLongArrowAltUp, faLongArrowAltDown } from '@fortawesome/free-solid-svg-icons'
-library.add(fab, faLongArrowAltUp, faLongArrowAltDown)
 
 export default function MenuBar({filterText, sortType, handleFilter, handleSortBy, handleSortAsc, handleSortDesc}) {
     
