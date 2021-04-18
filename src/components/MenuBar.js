@@ -1,9 +1,9 @@
 import React from 'react';
-import { Navbar, Nav, InputGroup, FormControl, FormGroup } from "react-bootstrap";
+import { Navbar, Nav, InputGroup, FormControl } from "react-bootstrap";
 import './MenuBar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-export default function MenuBar({filterText, sortType, handleFilter, handleSortBy, handleSortAsc, handleSortDesc}) {
+export default function MenuBar({filterText, sortOrder, handleFilter, handleSortBy, handleSortOrder}) {
     
     return (
         <div>
@@ -34,10 +34,10 @@ export default function MenuBar({filterText, sortType, handleFilter, handleSortB
                                     <option value="3">Age</option>
                             </FormControl>
                             <div className="arrows">
-                                <FontAwesomeIcon style={{ cursor: "pointer" }} icon="long-arrow-alt-down" values={sortType} size="lg" color={sortType==='Asc'? '#d0cfca': '#0275df'}
-                                    onClick={handleSortAsc} />
-                                <FontAwesomeIcon style={{ cursor: "pointer" }} icon="long-arrow-alt-up" values={sortType} size="lg" color={sortType==='Desc'? '#d0cfca': '#0275df'}
-                                    onClick={handleSortDesc}/>
+                                <FontAwesomeIcon style={{ cursor: "pointer" }} icon="long-arrow-alt-down" values={sortOrder} size="lg" color={sortOrder==='Asc'? '#d0cfca': '#0275df'}
+                                    onClick={()=>handleSortOrder('Asc')} />
+                                <FontAwesomeIcon style={{ cursor: "pointer" }} icon="long-arrow-alt-up" values={sortOrder} size="lg" color={sortOrder==='Desc'? '#d0cfca': '#0275df'}
+                                    onClick={()=>handleSortOrder('Desc')}/>
                             </div>
                         </InputGroup>
                     </Nav>

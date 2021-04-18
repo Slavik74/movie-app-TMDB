@@ -36,33 +36,26 @@ function ActoresPage() {
     const handleFilter = event => {
         const filterText=event.target.value; 
         setFilterText(filterText); 
-        filterAndSort(filterText, sortBy, sortType);        
+        filterAndSort(filterText, sortBy, sortOrder);        
     }   
 
 
     //Sort
     const [sortBy, setSortBy] = useState("");
-    const [sortType, setsortType] = useState("Asc");    
+    const [sortOrder, setSortOrder] = useState("Asc");    
 
     const handleSort = event => {
         const sortBy=event.target.value;   
         setSortBy(event.target.value);                
-        filterAndSort(filterText, sortBy, sortType);        
+        filterAndSort(filterText, sortBy, sortOrder);        
     };
 
-    const handleSortAsc = () => {
-        const sortType = 'Asc'
-        setsortType(sortType);                
-        filterAndSort(filterText, sortBy, sortType);        
+    const handleSortOrder = (sortOrder) => {
+        setSortOrder(sortOrder);                
+        filterAndSort(filterText, sortBy, sortOrder);        
     };
 
-    const handleSortDesc = () => {
-        const sortType = 'Desc'
-        setsortType(sortType);                
-        filterAndSort(filterText, sortBy, sortType);
-    };
-
-    function filterAndSort(filterText, sortBy, sortType){
+    function filterAndSort(filterText, sortBy, sortOrder){
         const doFilter = filterText => actor =>
         !filterText || actor.firstName.toLowerCase().includes(filterText.toLowerCase()) ||
         actor.lastName.toLowerCase().includes(filterText.toLowerCase()) ;
@@ -70,17 +63,17 @@ function ActoresPage() {
         const actors = actorsData.filter(doFilter(filterText));
 
         if (sortBy==="1"){            
-            if (sortType==="Asc")
+            if (sortOrder==="Asc")
                 actors.sort((a, b) => (a.firstName > b.firstName) ? 1 : -1);
             else
                 actors.sort((b, a) => (a.firstName > b.firstName) ? 1 : -1);
         } else if (sortBy==="2"){
-            if (sortType==="Asc")
+            if (sortOrder==="Asc")
                 actors.sort((a, b) => (a.lastName > b.lastName) ? 1 : -1);
             else
                 actors.sort((b, a) => (a.lastName > b.lastName) ? 1 : -1);
         } else if (sortBy==="3"){
-            if (sortType==="Asc")
+            if (sortOrder==="Asc")
                 actors.sort((a, b) => (Number(a.age()) - Number(b.age())));
             else
                 actors.sort((b, a) => (Number(a.age()) - Number(b.age())));
@@ -108,7 +101,7 @@ function ActoresPage() {
                     <span className="header-text">Actors</span>               
                 </header>
 
-                <MenuBar filterText={filterText} sortType={sortType} handleFilter={handleFilter} handleSortBy={handleSort} handleSortAsc={handleSortAsc} handleSortDesc={handleSortDesc}/>
+                <MenuBar filterText={filterText} sortOrder={sortOrder} handleFilter={handleFilter} handleSortBy={handleSort} handleSortOrder={handleSortOrder} />
                 <div className="row">
                     {actorCards}
                 </div>
