@@ -36,7 +36,6 @@ function ActoresPage() {
     const handleFilter = event => {
         const filterText=event.target.value; 
         setFilterText(filterText); 
-        filterAndSort(filterText, sortBy, sortOrder);        
     }   
 
 
@@ -47,45 +46,37 @@ function ActoresPage() {
     const handleSort = event => {
         const sortBy=event.target.value;   
         setSortBy(event.target.value);                
-        filterAndSort(filterText, sortBy, sortOrder);        
     };
 
     const handleSortOrder = (sortOrder) => {
         setSortOrder(sortOrder);                
-        filterAndSort(filterText, sortBy, sortOrder);        
     };
 
-    function filterAndSort(filterText, sortBy, sortOrder){
-        const doFilter = filterText => actor =>
-        !filterText || actor.firstName.toLowerCase().includes(filterText.toLowerCase()) ||
-        actor.lastName.toLowerCase().includes(filterText.toLowerCase()) ;
 
-        const actors = actorsData.filter(doFilter(filterText));
+    const doFilter = filterText => actor =>
+    !filterText || actor.firstName.toLowerCase().includes(filterText.toLowerCase()) ||
+    actor.lastName.toLowerCase().includes(filterText.toLowerCase()) ;
 
-        if (sortBy==="1"){            
-            if (sortOrder==="Asc")
-                actors.sort((a, b) => (a.firstName > b.firstName) ? 1 : -1);
-            else
-                actors.sort((b, a) => (a.firstName > b.firstName) ? 1 : -1);
-        } else if (sortBy==="2"){
-            if (sortOrder==="Asc")
-                actors.sort((a, b) => (a.lastName > b.lastName) ? 1 : -1);
-            else
-                actors.sort((b, a) => (a.lastName > b.lastName) ? 1 : -1);
-        } else if (sortBy==="3"){
-            if (sortOrder==="Asc")
-                actors.sort((a, b) => (Number(a.age()) - Number(b.age())));
-            else
-                actors.sort((b, a) => (Number(a.age()) - Number(b.age())));
+    const actorsFiltered = actors.filter(doFilter(filterText));
 
-        }
-
-        setActors(actors);
+    if (sortBy==="1"){            
+        if (sortOrder==="Asc")
+            actorsFiltered.sort((a, b) => (a.firstName > b.firstName) ? 1 : -1);
+        else
+            actorsFiltered.sort((b, a) => (a.firstName > b.firstName) ? 1 : -1);
+    } else if (sortBy==="2"){
+        if (sortOrder==="Asc")
+            actorsFiltered.sort((a, b) => (a.lastName > b.lastName) ? 1 : -1);
+        else
+            actorsFiltered.sort((b, a) => (a.lastName > b.lastName) ? 1 : -1);
+    } else if (sortBy==="3"){
+        if (sortOrder==="Asc")
+            actorsFiltered.sort((a, b) => (Number(a.age()) - Number(b.age())));
+        else
+            actorsFiltered.sort((b, a) => (Number(a.age()) - Number(b.age())));
     }
 
-
-
-    const actorCards = actors.map((actor, index) => <ActorCard key={'act'+index }
+    const actorCards = actorsFiltered.map((actor, index) => <ActorCard key={'act'+index }
                                                         firstName = {actor.firstName} 
                                                         lastName = {actor.lastName}
                                                         age = {actor.age()}   
