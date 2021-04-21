@@ -1,11 +1,11 @@
 
 class ActorModel {
-    constructor(firstName, lastName, birthday, image ,IMDBLink) {
+    constructor(firstName, lastName, birthday, image ,imdbLink) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.birthday = birthday;
         this.image = image;
-        this.IMDBLink = IMDBLink;
+        this.imdbLink = imdbLink;
     }
 
     age() {

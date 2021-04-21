@@ -14,7 +14,7 @@ function ActoresPage() {
 
     // We want to fetch the cars data from JSON only once the compoenent is mounting
     useEffect(() => {
-        setActors(actorsJson.map(actor => new ActorModel(actor.name1, actor.name2, actor.birthdate, actor.img, actor.imdb)));
+        setActors(actorsJson.map(actor => new ActorModel(actor.name1, actor.name2, actor.birthdate, actor.img, actor.imdbLink)));
     }, []);
 
 
@@ -68,7 +68,7 @@ function ActoresPage() {
                                                         lastName = {actor.lastName}
                                                         age = {actor.age()}   
                                                         image = {actor.image} 
-                                                        imdb = {actor.IMDBLink}/>)
+                                                        imdb = {actor.imdbLink}/>)
 
     //////////////
 
