@@ -1,6 +1,7 @@
 
 class ActorModel {
-    constructor(firstName, lastName, birthday, image ,imdbLink) {
+    constructor(tmdbId, firstName, lastName, birthday, image ,imdbLink) {
+        this.tmdbId = tmdbId;
         this.firstName = firstName;
         this.lastName = lastName;
         this.birthday = birthday;

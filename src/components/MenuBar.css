@@ -1,14 +1,14 @@
-.p-movie .search {
+.p-actor .search {
   flex-grow: 1;
   margin: 3px;
 }
 
-.p-movie .sort{
+.p-actor .sort{
   width: fit-content;
   margin: 3px;
 }
 
-.p-movie .sort .arrows {
+.p-actor .sort .arrows {
   display: flex;    
   justify-content: flex-end;
   align-items: center;

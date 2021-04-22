@@ -1,7 +1,17 @@
 import ActoresPage from './pages/ActoresPage';
+import React, { useState } from 'react';
+
 function App() {
+
+  const [actorId, setActorId] = useState([]);
+
   return (
-      <ActoresPage />      
+    <div>
+      <ActoresPage getActorId={(actorId)=>{
+        setActorId(actorId)
+      }} />   
+      {actorId}  
+    </div>
   );
 }
 

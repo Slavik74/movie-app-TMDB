@@ -1,14 +1,14 @@
-.p-movie .container{
+.p-actor .container{
     padding: 0;
 }
 
-.p-movie .row {
+.p-actor .row {
     display: flex;   
     justify-content: space-evenly;   
     padding: 0px; 
 }
 
-.p-movie header{
+.p-actor header{
     display: flex;
     background-color: rgb(123,142,212);
     background: linear-gradient(rgb(166, 185, 255) 20%, rgb(123, 142, 213)) content-box;
@@ -16,7 +16,7 @@
     width: 100%;
 }
 
-.p-movie .header-text {   
+.p-actor .header-text {   
     font-size: 4em;
     font-family: "Spartan";
     color: #2A293E;

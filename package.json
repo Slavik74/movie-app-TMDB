@@ -1,5 +1,6 @@
 {
-  "homepage": "https://slavik74.github.io/movie-app",
+  "tmdb_api_key": "53d2ee2137cf3228aefae083c8158855",
+  "homepage": "https://slavik74.github.io/movie-app-TMDB",
   "name": "movie-app",
   "version": "0.1.0",
   "private": true,
@@ -22,7 +23,7 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build -r https://github.com/Slavik74/movie-app",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

@@ -8,15 +8,14 @@ import ActorModel from '../model/ActorModel';
 import MenuBar from '../components/MenuBar';
 import actorsJson from '../actors.json';
 
-function ActoresPage() {
+function ActoresPage({getActorId}) {
 
     const [actors, setActors] = useState([]);
 
     // We want to fetch the cars data from JSON only once the compoenent is mounting
     useEffect(() => {
-        setActors(actorsJson.map(actor => new ActorModel(actor.name1, actor.name2, actor.birthdate, actor.img, actor.imdbLink)));
+        setActors(actorsJson.map(actor => new ActorModel(actor.tmdbId, actor.name1, actor.name2, actor.birthdate, actor.img, actor.imdbLink)));
     }, []);
-
 
     //Filter  
     const [filterText, setFilterText] = useState("");
@@ -64,16 +63,18 @@ function ActoresPage() {
     }
 
     const actorCards = actorsFiltered.map((actor, index) => <ActorCard key={'act'+index }
+                                                        tmdbId = {actor.tmdbId}
                                                         firstName = {actor.firstName} 
                                                         lastName = {actor.lastName}
                                                         age = {actor.age()}   
                                                         image = {actor.image} 
-                                                        imdb = {actor.imdbLink}/>)
+                                                        imdburl = {actor.imdbLink}
+                                                        getActorId = {getActorId} />)
 
     //////////////
 
     return (
-        <Container className="p-movie">
+        <Container className="p-actor">
             <div className="container">
                 <header>
                     <span className="header-text">Actors</span>               
