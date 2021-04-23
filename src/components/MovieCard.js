@@ -8,9 +8,9 @@ function MovieCard({ movie }) {
         <div className="c-movie">
             <Card bg="secondary" text='white'>
                 <div className="card-horizontal">
-                <Card.Img variant="top" src={movie.poster} />
+                {movie.poster?<Card.Img variant="top" src={movie.poster} />:null}
                 <Card.Body>
-                    <Card.Title>{movie.name}</Card.Title>
+                    <Card.Title>{`${movie.name} (${movie.release_year()})  ${movie.id}`}</Card.Title>
                     <ListGroup variant="flush">
                         <ListGroup.Item variant="secondary">
                                 <span className="card-label">Length:</span>{movie.length+" minutes"}
