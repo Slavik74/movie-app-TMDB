@@ -4,9 +4,9 @@ class MovieModel {
         this.name = name;
         this.length = length;
         this.director = director;
-        this.poster = poster;
+        this.poster = "https://image.tmdb.org/t/p/w500" + poster;
         this.plot = plot;
-        this.stars = stars;
+        this.stars = stars;        
     }
 }
 

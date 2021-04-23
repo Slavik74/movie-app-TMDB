@@ -24,7 +24,7 @@ function MoviePage(props) {
 
     return (
         <div className="p-movies">
-            <Container>
+            <Container className="card-horizontal">
                 <Row>
                     {movies.map(movie => <Col lg={3} md={6}><MovieCard movie={movie}/></Col>)}
                 </Row>
