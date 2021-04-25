@@ -6,7 +6,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 export default function MenuBar({filterText, sortOrder, handleFilter, handleSortBy, handleSortOrder}) {
     
     return (
-        <div>
             <Navbar collapseOnSelect expand="md" bg="primary">
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
@@ -45,9 +44,5 @@ export default function MenuBar({filterText, sortOrder, handleFilter, handleSort
                 </Navbar.Collapse>
             </Navbar>
             
-            
-            
-
-        </div>
     );
 };

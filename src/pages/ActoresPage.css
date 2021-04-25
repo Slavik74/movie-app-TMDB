@@ -8,18 +8,3 @@
     padding: 0px; 
 }
 
-.p-actor header{
-    display: flex;
-    background-color: rgb(123,142,212);
-    background: linear-gradient(rgb(166, 185, 255) 20%, rgb(123, 142, 213)) content-box;
-    justify-content: center;    
-    width: 100%;
-}
-
-.p-actor .header-text {   
-    font-size: 4em;
-    font-family: "Spartan";
-    color: #2A293E;
-    font-weight: lighter;
-  }
-  

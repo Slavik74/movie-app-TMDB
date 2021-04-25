@@ -74,18 +74,14 @@ function ActoresPage({getActorId}) {
     //////////////
 
     return (
-        <Container className="p-actor">
+        <div className="p-actor">
+            <MenuBar filterText={filterText} sortOrder={sortOrder} handleFilter={handleFilter} handleSortBy={handleSort} handleSortOrder={handleSortOrder} />
             <div className="container">
-                <header>
-                    <span className="header-text">Actors</span>               
-                </header>
-
-                <MenuBar filterText={filterText} sortOrder={sortOrder} handleFilter={handleFilter} handleSortBy={handleSort} handleSortOrder={handleSortOrder} />
                 <div className="row">
                     {actorCards}
                 </div>
             </div>
-        </Container>
+        </div>
     );
 
 }
