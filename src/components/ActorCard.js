@@ -1,18 +1,26 @@
-import React from 'react';
+import React, {useState} from 'react';
+import { Redirect, Link, useHistory } from 'react-router-dom';
 import './ActorCard.css'
 
-function ActorCard({tmdbId, firstName, lastName, age, image, imdburl, getActorId}) {
 
-    const handleClick = (e)=>{
-        e.preventDefault();
-        getActorId(tmdbId)
+function ActorCard({actorId, firstName, lastName, age, image, imdburl, getActorId}) {
+
+    const [redirectTo, setRedirectTo] = useState();
+    const history = useHistory()
+
+
+
+    if (redirectTo !== undefined) {
+        return <Redirect to={'/actors/' + redirectTo+'/movie/'}/>
     }
 
     return (
         <div className="col-lg-3 col-md-4 col-sm-6 card-box">
             <div className="card"> 
                 <div className="card-header">
-                    <h5><a href='#' onClick={handleClick} target="_self">{firstName  + ' ' + lastName}</a></h5>
+                    <h5>
+                        <Link onClick={() =>history.push('/actors/' + actorId+'/movie/')}>{firstName  + ' ' + lastName}</Link>
+                    </h5>
                 </div>
                 <div className="img-box">
                     <img className="card-img" src={image} />

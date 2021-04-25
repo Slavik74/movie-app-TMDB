@@ -7,15 +7,14 @@ import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 
 function App() {
 
-  const [actorId, setActorId] = useState(null);
 
   return (
 
     <HashRouter>
         <Switch>
           <Route exact path="/"><HomePage/></Route>
-          <Route exact path="/actors"><ActoresPage getActorId={(actorId)=>{setActorId(actorId)}} />   </Route>
-          <Route exact path="/actores/:id/movie">{actorId? <MoviePage actorId={actorId} />:null}</Route>
+          <Route exact path="/actors"><ActoresPage />   </Route>
+          <Route exact path="/actors/:actorId/movie"><MoviePage /></Route>
           <Route path="/"><NotFoundPage/></Route>
         </Switch>
     </HashRouter>

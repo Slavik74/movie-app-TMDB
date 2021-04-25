@@ -63,7 +63,7 @@ function ActoresPage({getActorId}) {
     }
 
     const actorCards = actorsFiltered.map((actor, index) => <ActorCard key={'act'+index }
-                                                        tmdbId = {actor.tmdbId}
+                                                        actorId = {actor.tmdbId}
                                                         firstName = {actor.firstName} 
                                                         lastName = {actor.lastName}
                                                         age = {actor.age()}   
