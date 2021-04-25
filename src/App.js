@@ -20,10 +20,11 @@ function App() {
           <NavBar/>
 
           <Switch>
+            <Route exact path="/"><HomePage/></Route>
             <Route exact path="/home"><HomePage/></Route>
             <Route exact path="/actors"><ActoresPage />   </Route>
             <Route exact path="/actors/:actorId/movie"><MoviePage /></Route>
-            <Route path="/"><NotFoundPage/></Route>
+            <Route path="*"><NotFoundPage/></Route>
           </Switch>
       </HashRouter>
     </div>
