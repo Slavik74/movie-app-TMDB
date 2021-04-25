@@ -33,7 +33,7 @@ function BootstrapSlider() {
     return (
         <div className="c-carousel">
             <h2>Top rated movies</h2>      
-            <Carousel Carousel >{
+            <Carousel fade >{
                 movies.map((movie, index) => 
                     <Carousel.Item interval={1000} key={index}>
                     <img
