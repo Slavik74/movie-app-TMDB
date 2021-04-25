@@ -1,18 +1,19 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-
+import { Container, Row } from 'react-bootstrap';
+import BootstrapSlider from './../../components/Carousel/Carousel';
+import './HomePage.css';
 
 function HomePage(props) {
-    return (
-        <div>
+
+
+    return (       
+        <div className="p-homepage">
             <Container>
-                <h1 className="display-1">Movies App</h1>
-                <p>Movies App!!</p>
-                <Link className="btn btn-primary" to="/actors">See all actors</Link>
+                <BootstrapSlider />
             </Container>
-        </div>
+        </div> 
     );
+
 }
 
 export default HomePage;
