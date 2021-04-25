@@ -12,7 +12,7 @@ function BootstrapSlider() {
 
     useEffect(() => {
         const api_key = configData.tmdb_api_key //get TMDB API key from config file
-        const thdbUrl = `http://api.themoviedb.org/3/movie/top_rated?api_key=${api_key}`
+        const thdbUrl = `https://api.themoviedb.org/3/movie/top_rated?api_key=${api_key}`
         axios.get(thdbUrl).then(response => {
             setresults(response.data.results)
         });
