@@ -1,6 +1,5 @@
 import React from 'react';
 import { Card, ListGroup } from 'react-bootstrap';
-import { Row } from 'react-bootstrap';
 import './MovieCard.css'
 
 function MovieCard({ movie }) {

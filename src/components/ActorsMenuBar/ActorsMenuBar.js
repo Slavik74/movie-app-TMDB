@@ -1,9 +1,9 @@
 import React from 'react';
 import { Navbar, Nav, InputGroup, FormControl } from "react-bootstrap";
-import './MenuBar.css'
+import './ActorsMenuBar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-export default function MenuBar({filterText, sortOrder, handleFilter, handleSortBy, handleSortOrder}) {
+export default function ActorsMenuBar({filterText, sortOrder, handleFilter, handleSortBy, handleSortOrder}) {
     
     return (
             <Navbar collapseOnSelect expand="md" bg="primary">

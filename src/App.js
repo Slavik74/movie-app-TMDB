@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom';
-import ActoresPage from './pages/ActoresPage';
-import MoviePage from './pages/MoviePage';
+import ActoresPage from './pages/ActoresPage/ActoresPage';
+import MoviePage from './pages/MoviePage/MoviePage';
 import HomePage from './pages/HomePage/HomePage';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
-import './App.css';
 import NavBar from './components/NavBar/NavBar';
+import './App.css';
+
+
 function App() {
 
 

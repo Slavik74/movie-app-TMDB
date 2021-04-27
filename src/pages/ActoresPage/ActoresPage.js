@@ -1,14 +1,13 @@
 //import axios from 'axios'
 import React, { useState, useEffect } from 'react';
-import {Container } from "react-bootstrap";
 import './ActoresPage.css';
 
-import ActorCard from '../components/ActorCard';
-import ActorModel from '../model/ActorModel';
-import MenuBar from '../components/MenuBar';
-import actorsJson from '../actors.json';
+import ActorCard from './../../components/ActorCard/ActorCard';
+import ActorModel from './../../model/ActorModel';
+import actorsJson from './../../actors.json';
+import ActorsMenuBar from './../../components/ActorsMenuBar/ActorsMenuBar';
 
-function ActoresPage({getActorId}) {
+function ActoresPage() {
 
     const [actors, setActors] = useState([]);
 
@@ -68,14 +67,13 @@ function ActoresPage({getActorId}) {
                                                         lastName = {actor.lastName}
                                                         age = {actor.age()}   
                                                         image = {actor.image} 
-                                                        imdburl = {actor.imdbLink}
-                                                        getActorId = {getActorId} />)
+                                                        imdburl = {actor.imdbLink} />)
 
     //////////////
 
     return (
         <div className="p-actor">
-            <MenuBar filterText={filterText} sortOrder={sortOrder} handleFilter={handleFilter} handleSortBy={handleSort} handleSortOrder={handleSortOrder} />
+            <ActorsMenuBar filterText={filterText} sortOrder={sortOrder} handleFilter={handleFilter} handleSortBy={handleSort} handleSortOrder={handleSortOrder} />
             <div className="container">
                 <div className="row">
                     {actorCards}

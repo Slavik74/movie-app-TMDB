@@ -2,9 +2,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Col, Container, Row } from 'react-bootstrap';
-import configData from "../../package.json";//to hide TMDB API keys
-import MovieCard from '../components/MovieCard.js';
-import MoviesModel from '../model/MovieModel.js';
+import configData from "./../../../package.json";//to hide TMDB API keys
+import MoviesModel from '../../model/MovieModel.js';
+import MovieCard from '../../components/MovieCard/MovieCard';
 import { useParams } from 'react-router-dom';
 
 function MoviePage() {
@@ -12,15 +12,8 @@ function MoviePage() {
     const [movies, setMovies] = useState([])
 
     const {actorId} =  useParams();
-
-    //`movie id https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&&with_cast=${actorId}&sort_by=vote_average.desc`
-    // runtime `https://api.themoviedb.org/3/movie/277129?api_key=53d2ee2137cf3228aefae083c8158855&language=en-US`
-    // stars `https://api.themoviedb.org/3/movie/684426/credits?api_key=53d2ee2137cf3228aefae083c8158855&language=en-US`
-    // videos `https://api.themoviedb.org/3/movie/157336/videos?api_key=53d2ee2137cf3228aefae083c8158855`
       
     useEffect(() => {
-
-
             const getMovies = async ()=> {
                 try {
                     const moviesData1 = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&with_cast=${actorId}&sort_by=vote_average.desc`);

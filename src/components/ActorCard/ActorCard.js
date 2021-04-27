@@ -3,7 +3,7 @@ import { Redirect, Link, useHistory } from 'react-router-dom';
 import './ActorCard.css'
 
 
-function ActorCard({actorId, firstName, lastName, age, image, imdburl, getActorId}) {
+function ActorCard({actorId, firstName, lastName, age, image, imdburl}) {
 
     const [redirectTo, setRedirectTo] = useState();
     const history = useHistory()
