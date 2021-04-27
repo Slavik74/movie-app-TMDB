@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Col, Container, Row } from 'react-bootstrap';
-import configData from "./../../../package.json";//to hide TMDB API keys
+import configData from "./../../../package.json";       //to hide TMDB API keys
 import MoviesModel from '../../model/MovieModel.js';
 import MovieCard from '../../components/MovieCard/MovieCard';
 import { useParams } from 'react-router-dom';

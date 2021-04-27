@@ -13,7 +13,7 @@ function ActoresPage() {
 
     // We want to fetch the data from JSON only once the compoenent is mounting
     useEffect(() => {
-        setActors(actorsJson.map(actor => new ActorModel(actor.tmdbId, actor.name1, actor.name2, actor.birthdate, actor.img, actor.imdbLink)));
+        setActors(actorsJson.map(actor => new ActorModel(actor.tmdbId, actor.name1, actor.name2, actor.birthdate, actor.deathdate, actor.img, actor.imdbLink)));
     }, []);
 
     //Filter  
@@ -23,7 +23,6 @@ function ActoresPage() {
         const filterText=event.target.value; 
         setFilterText(filterText); 
     }   
-
 
     //Sort
     const [sortBy, setSortBy] = useState("");
@@ -36,7 +35,6 @@ function ActoresPage() {
     const handleSortOrder = (sortOrder) => {
         setSortOrder(sortOrder);                
     };
-
 
     const doFilter = filterText => actor =>
     !filterText || actor.firstName.toLowerCase().includes(filterText.toLowerCase()) ||
@@ -67,7 +65,7 @@ function ActoresPage() {
                                                         lastName = {actor.lastName}
                                                         age = {actor.age()}   
                                                         image = {actor.image} 
-                                                        imdburl = {actor.imdbLink} />)
+                                                        deathDate = {actor.deathDate} />)
 
     //////////////
 
