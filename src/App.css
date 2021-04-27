@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&display=swap');
 
 .app header{
     display: flex;
@@ -9,8 +10,10 @@
 
 .app .header-text {   
     font-size: 4em;
-    font-family: "Spartan";
+    font-family: 'Dancing Script', cursive;
+    font-weight: bold;
     color: #2A293E;
     font-weight: lighter;
+    
   }
   
